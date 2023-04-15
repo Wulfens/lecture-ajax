@@ -1,6 +1,6 @@
 ## Requirements
 
-You must have Node and Yarn installed on your computer [with the same versions than in our setup](https://github.com/lewagon/setup/blob/master/macos.md#nodejs). Check it with: 
+You must have Node and Yarn installed on your computer [with the same versions than in our setup](https://github.com/lewagon/setup/blob/master/macos.md#nodejs). Check it with:
 
 ```bash
 node -v
@@ -16,7 +16,7 @@ First clone this repository to your laptop:
 
 ```bash
 cd ~/code/<your_github_nickname>
-git clone git@github.com:lewagon/webpack-boilerplate.git my-js-project
+git clone git@github.com:Wulfens/lecture-ajax.git my-js-project
 cd my-js-project
 rm -rf .git
 yarn install
@@ -30,7 +30,7 @@ echo $PATH
 # You should see `./node_modules/.bin` in the list
 ```
 
-If it's not the case, add it: 
+If it's not the case, add it:
 
 ```bash
 cd ~/code/dotfiles/<your_github_nickname>
