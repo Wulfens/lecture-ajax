@@ -1,18 +1,22 @@
 // console.log("Hello from src/index.js!");
-// const button = document.querySelector("#clickme");
-// // const button = document.getElementById("clickme");
 
-// console.log(button);
+// ========Révision========
+const button = document.querySelector("#clickme");
+// const button = document.getElementById("clickme");
 
-// // button.addEventListener("EVENT_TYPE", "CALLBACK");
-// // button.addEventListener("click", (event) => {});
+console.log(button);
 
-// button.addEventListener("click", (event) => {
-//   event.currentTarget.innerText = "Hold Still...";
-//   event.currentTarget.setAttribute("disabled", "");
-//   // event.currentTarget.disable = true;
-// });
+// button.addEventListener("EVENT_TYPE", "CALLBACK");
+// button.addEventListener("click", (event) => {});
 
+button.addEventListener("click", (event) => {
+  event.currentTarget.innerText = "Hold Still...";
+  event.currentTarget.setAttribute("disabled", "");
+  // event.currentTarget.disable = true;
+});
+
+
+// ==============Search Movies===================
 const searchMovies = (query) => {
   const moviesList = document.getElementById("movies-list");
   fetch(`http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`)
@@ -37,3 +41,24 @@ form.addEventListener('submit', (event) => {
   const inputQuery = form.querySelector("#search-input").value;
   searchMovies(inputQuery);
 });
+
+
+// ============Post Request================
+
+const signUp = (event) => {
+  event.preventDefault();
+  const emailValue = document.getElementById("email").value;
+  const passwordValue = document.getElementById("password").value;
+  fetch("https://reqres.in/api/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: emailValue, password: passwordValue })
+  })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+const signUpForm = document.querySelector("#form");
+signUpForm.addEventListener("submit", signUp);
